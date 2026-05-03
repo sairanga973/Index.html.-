@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>VoltaX Bar code Scanner</title>
+    <title>VoltaX QR Scanner</title>
 </head>
 <body>
 
-<h2>Voltax Bar code scanner</h2>
+<h2>Voltax QR code scanner</h2>
 
 <div id="reader" style="width:300px;"></div>
 <p id="result">Scan result will appear here</p>
 
 <!-- QR Code Library -->
-<script src="https://unpkg.com/quagga/dist/quagga.min.js"></script>
+<script src="https://unpkg.com/html5-qrcode"></script>
 
 <script>
-    // Function runs when Bar code  is successfully scanned
+    // Function runs when QR is successfully scanned
     function onScanSuccess(decodedText) {
         document.getElementById("result").innerText = "Result: " + decodedText;
     }
 
     // Create scanner
-    let scanner = new QuaggaJS (
+    let scanner = new Html5QrcodeScanner(
         "reader",
         { fps: 10, qrbox: 250 }
     );
